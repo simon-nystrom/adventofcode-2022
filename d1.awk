@@ -5,6 +5,3 @@ END     {
             print "p1: " sum[NR];
             print "p2: " sum[NR] + sum[NR - 1] + sum[NR - 2];
 }
-
-
-
