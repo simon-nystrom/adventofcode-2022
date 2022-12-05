@@ -1,22 +1,21 @@
 @include "strings"
 
 BEGIN { 
-    cargo["1"] = "DLVTMHF";  cargo["2"] = "HQGJCTNP"; cargo["3"] = "RSDMPH";
-    cargo["4"] = "LBVF";     cargo["5"] = "NHGLQ";    cargo["6"] = "WBDGRMP";
-    cargo["7"] = "GMNRCHLQ"; cargo["8"] = "CLW";      cargo["9"] = "RDLQJZMT";
+    c["1"] = "DLVTMHF";  c["2"] = "HQGJCTNP"; c["3"] = "RSDMPH";
+    c["4"] = "LBVF";     c["5"] = "NHGLQ";    c["6"] = "WBDGRMP";
+    c["7"] = "GMNRCHLQ"; c["8"] = "CLW";      c["9"] = "RDLQJZMT";
 }
 
-FNR > 10 {
-    num = $2; from = $4; to = $6;
-    # For part2 remove reverse
-    cargo[to] = cargo[to] reverse(substr(cargo[from], length(cargo[from]) - num + 1,  num));
-    cargo[from] = substr(cargo[from], 0, length(cargo[from]) - num);
+FNR > 10 { 
+    # remove reverse for p2
+    c[$6] = c[$6] reverse(substr(c[$4], length(c[$4]) - $2 + 1, $2)); 
+    c[$4] = substr(c[$4], 0, length(c[$4]) - $2);
 }
 
 END { 
     for (i = 1; i <= 9; i++) {
-        split(cargo[i], arr, "")
+        split(c[i], arr, //);
         msg = msg arr[length(arr)];
     }
-    print msg
+    print msg;
  }
