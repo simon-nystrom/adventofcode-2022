@@ -4,3 +4,11 @@ function join(arr,    a) {
     }
     return a;
 }
+
+function reverse(s,         arr, r) {
+    split(s, arr, "")
+    for(i = length(arr); i > 0; i--) {
+        r = r arr[i]
+    }
+    return r
+}
