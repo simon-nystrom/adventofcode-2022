@@ -2,10 +2,7 @@
 BEGIN { FS = ""; l = 14; }
 
 { 
-    a = $0
     for (i = 1; i <= NF; i++) {
-        a = $0
-        gsub(".{" l "}", "& ", a);
         a = substr($0, i, l)
         split(a, b, "")
         for (j = 1; j <= l; j++) {
