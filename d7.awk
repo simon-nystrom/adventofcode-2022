@@ -11,11 +11,10 @@ END {
 
     nf = 30000000 - (70000000 - size("//"));
     asort(req);
-    for (i in req) {
-        if (nf - req[i] < 0) {
-            break;
-        }
-    }
+
+    for (i in req) 
+        if (nf - req[i] < 0) break;
+
     print "p1: " p1;
     print "p2: " req[i];
 }
