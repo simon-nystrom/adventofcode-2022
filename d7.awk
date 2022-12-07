@@ -6,7 +6,7 @@ END {
     for (i in d) 
         for (j in d[i]) {
             req[d[i][j]] = size(d[i][j]);
-            if (req[d[i][j]] < 100000) p1 += size(d[i][j]);
+            if (req[d[i][j]] < 100000) p1 += req[d[i][j]];
         }
 
     nf = 30000000 - (70000000 - size("//"));
