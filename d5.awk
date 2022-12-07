@@ -6,8 +6,9 @@ BEGIN {
     c["7"] = "GMNRCHLQ"; c["8"] = "CLW";      c["9"] = "RDLQJZMT";
 }
 
+# remove reverse for p2
+
 FNR > 10 { 
-    # remove reverse for p2
     c[$6] = c[$6] reverse(substr(c[$4], length(c[$4]) - $2 + 1, $2)); 
     c[$4] = substr(c[$4], 0, length(c[$4]) - $2);
 }
