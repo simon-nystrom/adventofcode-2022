@@ -9,9 +9,9 @@ BEGIN { for (i = 0; i <= 9; i++) { P[i]["x"] = 0; P[i]["y"] = 0; } }
         if ($1 == "R") P[0]["x"]++;
         if ($1 == "L") P[0]["x"]--;
         for (k = 1; k <= 9; k++) {
-            diffX = P[k-1]["x"] - P[k]["x"];
-            diffY = P[k-1]["y"] - P[k]["y"];
             if (!is_adj(P[k]["x"],P[k]["y"],P[k-1]["x"],P[k-1]["y"])) {
+                diffX = P[k-1]["x"] - P[k]["x"];
+                diffY = P[k-1]["y"] - P[k]["y"];
                 P[k]["x"] += diffX > 0 ? 1 : diffX == 0 ? 0 : -1;
                 P[k]["y"] += diffY > 0 ? 1 : diffY == 0 ? 0 : -1;
             }
