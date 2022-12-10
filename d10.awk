@@ -1,5 +1,3 @@
-@include "math"
-
 BEGIN  { x = 1;                     }
 /noop/ { cycle();                   }
 /addx/ { cycle(); cycle(); x += $2; }
