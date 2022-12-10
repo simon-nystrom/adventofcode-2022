@@ -1,3 +1,5 @@
+@include "math"
+
 BEGIN  { x = 1;                     }
 /noop/ { cycle();                   }
 /addx/ { cycle(); cycle(); x += $2; }
@@ -18,3 +20,4 @@ function cycle() {
     c++;
     if ((c - 20) % 40 == 0) p1 += c * x;
 }
+
